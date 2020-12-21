@@ -47,21 +47,21 @@ ChatBot::~ChatBot()
 
 ChatBot::ChatBot(const ChatBot &source) // copy constructor
 {
-    _image = new wxBitmap(*source.filename, wxBITMAP_TYPE_PNG);
+    _image = new wxBitmap();
     *_image = *source._image;
     std::cout << "COPYING content of instance " << &source << " to instance " << this << std::endl;
 }
 
-ChatBot::ChatBot &operator=(const ChatBot &source) // copy assignment operator
-    {
-        std::cout << "ASSIGNING content of instance " << &source << " to instance " << this << std::endl;
-        if (this == &source)
-            return *this;
-        delete[] _image;
-        _image = new wxBitmap(*source.filename, wxBITMAP_TYPE_PNG);
-        *_image = *source._image;
+ChatBot& ChatBot::operator=(const ChatBot &source) // copy assignment operator
+{
+    std::cout << "ASSIGNING content of instance " << &source << " to instance " << this << std::endl;
+    if (this == &source)
         return *this;
-    }
+    delete[] _image;
+    _image = new wxBitmap();
+    *_image = *source._image;
+    return *this;
+}
 ////
 //// EOF STUDENT CODE
 
