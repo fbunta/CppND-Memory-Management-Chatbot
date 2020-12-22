@@ -44,14 +44,12 @@ ChatBot::~ChatBot()
 
 //// STUDENT CODE
 ////
-
 ChatBot::ChatBot(const ChatBot &source) // copy constructor
 {
     _image = new wxBitmap();
     *_image = *source._image;
     std::cout << "COPYING content of instance " << &source << " to instance " << this << std::endl;
 }
-
 ChatBot& ChatBot::operator=(const ChatBot &source) // copy assignment operator
 {
     std::cout << "ASSIGNING content of instance " << &source << " to instance " << this << std::endl;
@@ -60,6 +58,22 @@ ChatBot& ChatBot::operator=(const ChatBot &source) // copy assignment operator
     delete[] _image;
     _image = new wxBitmap();
     *_image = *source._image;
+    return *this;
+}
+ChatBot::ChatBot(ChatBot && source) // move constructor
+{
+    std::cout << "MOVING (c’tor) instance " << &source << " to instance " << this << std::endl;
+    _image = source._image;
+    source._image = nullptr;
+}
+ChatBot& ChatBot::operator=(ChatBot &&source) // move assignment
+{
+    std::cout << "MOVING (assign) instance " << &source << " to instance " << this << std::endl;
+    if (this == &source)
+        return *this;
+    delete[] _image;
+    _image = source._image;
+    source._image = nullptr;
     return *this;
 }
 ////
