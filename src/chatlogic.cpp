@@ -164,7 +164,8 @@ void ChatLogic::LoadAnswerGraphFromFile(std::string filename)
                             // gotta watch for transferring ownership via pass by value
 
                             // create new edge that is exclusively owned
-                            std::unique_ptr<GraphEdge> edge = new GraphEdge(id);
+                            // GraphEdge *edge = new GraphEdge(id);
+                            std::unique_ptr<GraphEdge> edge = std::make_unique<GraphEdge>(id);
 
                             edge->SetChildNode(childNode->get());
                             edge->SetParentNode(parentNode->get());
