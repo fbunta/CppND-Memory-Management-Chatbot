@@ -17,7 +17,7 @@ private:
     ////
 
     // data handles (exclusively owned)
-    std::unique_ptr<std::vector<GraphEdge>> _childEdges; // edges to subsequent nodes
+    std::vector<std::unique_ptr<GraphEdge>> _childEdges; // edges to subsequent nodes
     // std::vector<GraphEdge *> _childEdges; 
 
     // data handles (not owned)
@@ -38,7 +38,7 @@ public:
 
     // getter / setter
     int GetID() { return _id; }
-    int GetNumberOfChildEdges() { return _childEdges.get()->size(); }
+    int GetNumberOfChildEdges() { return _childEdges.size(); }
     GraphEdge *GetChildEdgeAtIndex(int index);
     std::vector<std::string> GetAnswers() { return _answers; }
     int GetNumberOfParents() { return _parentEdges.size(); }

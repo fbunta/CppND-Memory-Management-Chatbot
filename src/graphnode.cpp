@@ -58,7 +58,7 @@ GraphEdge *GraphNode::GetChildEdgeAtIndex(int index)
     //// STUDENT CODE
     ////
 
-    return _childEdges.get()[index];
+    return _childEdges[index].get();
 
     ////
     //// EOF STUDENT CODE
