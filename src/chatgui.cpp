@@ -119,7 +119,7 @@ ChatBotPanelDialog::ChatBotPanelDialog(wxWindow *parent, wxWindowID id)
     ////
 
     // create chat logic instance
-    // OLD: _chatLogic = new ChatLogic();
+    // _chatLogic = new ChatLogic();
     // Needs to be modified to work with unique smart pointer
     _chatLogic = std::make_unique<ChatLogic>();
 
@@ -138,7 +138,7 @@ ChatBotPanelDialog::~ChatBotPanelDialog()
     //// STUDENT CODE
     ////
 
-    // OLD: no longer necessary
+    // no longer necessary, this is now a smart pointer
     // delete _chatLogic;
  
     ////
