@@ -76,9 +76,9 @@ ChatBot::ChatBot(ChatBot &&source) // move constructor
     _rootNode = source._rootNode;
     _chatLogic = source._chatLogic;
     _chatLogic->SetChatbotHandle(this);
-    source._currentNode = nullptr;
-    source._chatLogic = nullptr;
-    source._rootNode = nullptr;
+    // source._currentNode = nullptr;
+    // source._chatLogic = nullptr;
+    // source._rootNode = nullptr;
     std::cout << "ChatBot Move Constructor" << std::endl;
 }
 ChatBot &ChatBot::operator=(ChatBot &&source) // move assignment
@@ -92,9 +92,9 @@ ChatBot &ChatBot::operator=(ChatBot &&source) // move assignment
     _rootNode = source._rootNode;
     _chatLogic = source._chatLogic;
     _chatLogic->SetChatbotHandle(this);
-    source._currentNode = nullptr;
-    source._chatLogic = nullptr;
-    source._rootNode = nullptr;
+    // source._currentNode = nullptr;
+    // source._chatLogic = nullptr;
+    // source._rootNode = nullptr;
     return *this;
     std::cout << "ChatBot Move Assign" << std::endl;
 }
