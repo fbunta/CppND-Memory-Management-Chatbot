@@ -51,7 +51,7 @@ ChatBot::ChatBot(const ChatBot &source) // copy constructor
     _currentNode = source._currentNode;
     _rootNode = source._rootNode;
     _chatLogic = source._chatLogic;
-    _chatLogic->SetChatbotHandle(this)
+    _chatLogic->SetChatbotHandle(this);
     std::cout << "COPYING content of instance " << &source << " to instance " << this << std::endl;
 }
 ChatBot& ChatBot::operator=(const ChatBot &source) // copy assignment operator
@@ -65,7 +65,7 @@ ChatBot& ChatBot::operator=(const ChatBot &source) // copy assignment operator
     _currentNode = source._currentNode;
     _rootNode = source._rootNode;
     _chatLogic = source._chatLogic;
-    _chatLogic->SetChatbotHandle(this)
+    _chatLogic->SetChatbotHandle(this);
     return *this;
 }
 ChatBot::ChatBot(ChatBot && source) // move constructor
